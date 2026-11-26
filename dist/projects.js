@@ -105,5 +105,5 @@ const collection = [
 ]
 
 // Featured projects lead the collection; all remaining projects retain their order.
-const featured=['balancing-segway','between-spaces','first-order-robotics','in-motion','occupied','ichack','spray'];
+const featured=['in-motion','spray','between-spaces','ichack','occupied'];
 export const projects=[...featured.map(id=>collection.find(project=>project.id===id)),...collection.filter(project=>!featured.includes(project.id))];

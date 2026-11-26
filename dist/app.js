@@ -199,7 +199,7 @@ function showProjects(changeHistory=true){
   row.select(state.selectedId,{immediate:true});row.activate();
   transition=gsap.fromTo([root,home],{opacity:0},{opacity:1,duration:reduced?0:.35,overwrite:true});
   if(changeHistory)history.replaceState(null,'',location.pathname+location.search);
-  document.title='Siyi Yu — Design Engineering Portfolio';$('open-album').focus({preventScroll:true});diagnostics();
+  document.title='Siyi Yu — UX Portfolio';$('open-album').focus({preventScroll:true});diagnostics();
 }
 function setFilter(filter){
   state.filter=filter;state.ids=projects.filter(p=>filter==='all'||p.demo).map(p=>p.id);

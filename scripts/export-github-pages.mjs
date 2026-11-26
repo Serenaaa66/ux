@@ -6,7 +6,8 @@ import {pipeline} from 'node:stream/promises';
 import path from 'node:path';
 import {reports} from '../worker/report-manifest.js';
 import {projectVideos} from '../worker/video-manifest.js';
-import {pagesOrigin,roomServiceOrigin} from '../worker/hosting-config.js';
+import {preparePagesSubpath} from './prepare-pages-subpath.mjs';
+import {pagesOrigin,pagesBasePath,pagesStorageNamespace,roomServiceOrigin} from '../worker/hosting-config.js';
 
 // Pages serves static files. Materialise the Worker-only download/video routes,
 // preserving every original byte, and keep online rooms on the existing service.
@@ -42,5 +43,6 @@ const clientPath=exportedPath('/assets/games/battleship/room-client.js');
 const code=await readFile(clientPath,'utf8'),marker="const apiRoot = '/api/battleship';";
 if(code.split(marker).length!==2)throw new Error('The room service configuration marker is missing or ambiguous.');
 await writeFile(clientPath,code.replace(marker,`const apiRoot = '${roomServiceOrigin}/api/battleship';`));
+const changed=await preparePagesSubpath(output,{basePath:pagesBasePath,namespace:pagesStorageNamespace});
 await writeFile(path.join(output,'.nojekyll'),'');
-console.log(`Static portfolio prepared for ${pagesOrigin}/ in ${output}. Original reports verified; online service retained.`);
+console.log(`Static portfolio prepared for ${pagesOrigin}${pagesBasePath}/ in ${output}. Original reports verified; online service retained. ${changed} frontend files adapted to the UX deployment.`);

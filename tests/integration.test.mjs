@@ -48,7 +48,7 @@ test('stable project IDs survive reordered and filtered arrays',()=>{
 
 
 test('featured collection order follows the requested projects and retains all discs',()=>{
-  assert.deepEqual(projects.slice(0,7).map(project=>project.id),['balancing-segway','between-spaces','first-order-robotics','in-motion','occupied','ichack','spray']);
+  assert.deepEqual(projects.slice(0,5).map(project=>project.id),['in-motion','spray','between-spaces','ichack','occupied']);
   assert.equal(projects.length,12);assert.equal(new Set(projects.map(project=>project.id)).size,12);
-  assert.equal(projects[0].caseStudy.links,undefined);
+  assert.equal(projects.find(project=>project.id==='balancing-segway').caseStudy.links,undefined);
 });
