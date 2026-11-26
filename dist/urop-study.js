@@ -141,12 +141,7 @@ export const uropProject={
         ]
       }
     ],
-    "links": [
-      {
-        "label": "Explore the full research notebook",
-        "href": "https://app.notion.com/p/UROP-Research-Notebook-Siyi-Yu-3efeb430ec0880359940c458d49ac1c8"
-      }
-    ]
+    "links": []
   },
   "credits": [
     [
