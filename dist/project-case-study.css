@@ -69,7 +69,7 @@
 .case-figure { min-width: 0; margin: 0; }
 .case-figure--wide { grid-column: 1 / -1; justify-self: center; width: min(100%, var(--figure-width,730px)); }
 .case-diagram-hint { display: none; }
-:root[data-theme="light"] .case-figure--brand img { filter: brightness(.62) saturate(1.12); }
+/* Preserve original brand colours in both themes. */
 .case-chapter--image-led { grid-template-columns: minmax(0,.6fr) minmax(0,1.4fr); align-items: start; }
 .case-chapter--image-led .case-chapter-copy { grid-column: 1; }
 .case-chapter--image-led .case-gallery { grid-column: 2; grid-row: 1 / span 2; }
