@@ -65,13 +65,6 @@ export const uropProject={
         "intro": "I took my recorder into a Jaguar Land Rover crash test, then processed and organised the eight-phone dataset. Phone004’s approximately 68-minute session captured the impact across all three sensors. These four plots move from session-level recording to the pulse and the sensor’s measurement limits.",
         "figures": [
           {
-            "src": "./assets/projects/urop/study/jlr-post-crash.jpg",
-            "width": 1785,
-            "height": 1279,
-            "caption": "JLR real-world crash test · Vehicle after impact",
-            "wide": true
-          },
-          {
             "src": "./assets/projects/urop/study/jlr-01-overview.png",
             "width": 1784,
             "height": 1382,
